@@ -32,6 +32,7 @@ jobs:
         REGISTRY_ALIAS: d1i4x5x9
         REPOSITORY: demo/demo
         IMAGE_TAG: ${{ github.sha }}
+        GALLERY: gallery.ecr.aws
       run: |
         docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
@@ -40,5 +41,5 @@ jobs:
         ## Image Details
         | Container Registry | Image |
         | ------------------ |-------|
-        | [XYZ Entreprises]($REGISTRY/$REGISTRY_ALIAS) | [$REGISTRY/$REGISTRY_ALIAS/$REPOSITORY]($REGISTRY/$REGISTRY_ALIAS/$REPOSITORY) |
+        | [XYZ Entreprises](https://$GALLERY/$REGISTRY_ALIAS) | [$REGISTRY/$REGISTRY_ALIAS/$REPOSITORY](https://$GALLERY/$REGISTRY_ALIAS/$REPOSITORY) |
         EOF
