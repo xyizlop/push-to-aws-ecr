@@ -30,7 +30,7 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
         REGISTRY_ALIAS: d1i4x5x9
-        REPOSITORY: demo/demo
+        REPOSITORY: python-web-server
         IMAGE_TAG: ${{ github.sha }}
         GALLERY: gallery.ecr.aws
       run: |
